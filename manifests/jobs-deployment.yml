@@ -1,0 +1,31 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dx29-annotations-jobs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dx29-annotations-jobs
+  template:
+    metadata:
+      labels:
+        app: dx29-annotations-jobs
+    spec:
+      containers:
+        - name: dx29-annotations-jobs
+          image: <container-registry>/dx29annotationsworker
+          ports:
+          - containerPort: 80
+          resources:
+            requests:
+              cpu: 0.45
+              memory: "512Mi"
+          volumeMounts:
+          - name: secrets
+            mountPath: /app/secrets
+            readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: secret-name
