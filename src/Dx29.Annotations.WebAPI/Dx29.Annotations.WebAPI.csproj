@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>e363a5f2-aa66-42e5-8566-21fc17fcc6d2</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <!--<DockerfileBuildArguments>-t dx29-annotations</DockerfileBuildArguments>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.6" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.6" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="~Deployment\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dx29.Annotations\Dx29.Annotations.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\annotations-webapi-pipelines.yml" Link="~Deployment\annotations-webapi-pipelines.yml" />
+    <None Include="..\..\manifests\webapi-deployment.yml" Link="~Deployment\webapi-deployment.yml" />
+    <None Include="..\..\manifests\webapi-service.yml" Link="~Deployment\webapi-service.yml" />
+  </ItemGroup>
+
+</Project>
