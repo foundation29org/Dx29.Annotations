@@ -9,6 +9,8 @@ Dx29.Annotations [![Build Status](https://f29.visualstudio.com/Dx29%20v2/_apis/b
 
 Dx29.Annotations-Jobs [![Build Status](https://f29.visualstudio.com/Dx29%20v2/_apis/build/status/DEV-MICROSERVICES/Dx29.Annotations-Jobs?branchName=develop)](https://f29.visualstudio.com/Dx29%20v2/_build/latest?definitionId=69&branchName=develop)
 
+[![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+
 ### **Overview**
 
 This project is used to extract information from medical documents.
